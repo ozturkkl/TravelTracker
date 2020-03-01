@@ -17,7 +17,7 @@ class MainViewModel : ViewModel() {
         _locations = locationService.fetchLocations(locationName)
     }
 
-    internal var countries:MutableList<Location>
+    internal var locations:MutableList<Location>
         get() {return _locations}
         set(value) {_locations = value}
 }

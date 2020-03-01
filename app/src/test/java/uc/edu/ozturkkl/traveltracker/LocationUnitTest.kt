@@ -27,5 +27,6 @@ class LocationUnitTest {
     fun canFindAddress() {
         mvm = MainViewModel()
         mvm.fetchLocations("5433 Waterfall Hills");
+        assertTrue(mvm.locations[0].zip.equals(45244))
     }
 }
