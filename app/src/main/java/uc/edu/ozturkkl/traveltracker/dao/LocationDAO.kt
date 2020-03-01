@@ -1,4 +1,9 @@
 package uc.edu.ozturkkl.traveltracker.dao
 
-class LocationDAO {
+import uc.edu.ozturkkl.traveltracker.dto.Location
+
+interface LocationDAO {
+
+
+
 }
