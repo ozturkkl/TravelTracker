@@ -15,18 +15,18 @@ class LocationUnitTest {
     lateinit var mvm: MainViewModel
 
     @Test
-    fun locationDTO_maintainsState() {
-        var location = Location("5433 Waterfall Hills", "Cincinnati", "Ohio", 45244)
-        assertTrue(location.address.equals("5433 Waterfall Hills") )
-        assertTrue(location.city.equals("Cincinnati"))
-        assertTrue(location.state.equals("Ohio"))
-        assertTrue(location.zip.equals(45244))
+    internal fun locationDTO_maintainsState() {
+        val location = Location("5433 Waterfall Hills", "Cincinnati", "Ohio", 45244)
+        assertTrue(location.address == "5433 Waterfall Hills")
+        assertTrue(location.city == "Cincinnati")
+        assertTrue(location.state == "Ohio")
+        assertTrue(location.zip == 45244)
     }
 
     @Test
-    fun canFindAddress() {
+    internal fun canFindAddress() {
         mvm = MainViewModel()
-        mvm.fetchLocations("5433 Waterfall Hills");
-        assertTrue(mvm.locations[0].zip.equals(45244))
+        mvm.fetchLocations("5433 Waterfall Hills")
+        assertTrue(mvm.locations[0].zip == 45244)
     }
 }
