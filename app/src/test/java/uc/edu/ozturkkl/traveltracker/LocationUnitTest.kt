@@ -15,7 +15,8 @@ class LocationUnitTest {
     lateinit var mvm: MainViewModel
 
     @Test
-    fun locationDTO_maintainsState() {
+
+    fun `Location DTO should maintain it's state`() {
         var location = Location("5433 Waterfall Hills", "Cincinnati", "Ohio", 45244)
         assertTrue(location.address.equals("5433 Waterfall Hills") )
         assertTrue(location.city.equals("Cincinnati"))
@@ -24,7 +25,7 @@ class LocationUnitTest {
     }
 
     @Test
-    fun canFindAddress() {
+    fun `Should be able to find the correct address`() {
         mvm = MainViewModel()
         mvm.fetchLocations("5433 Waterfall Hills");
         assertTrue(mvm.locations[0].zip.equals(45244))
