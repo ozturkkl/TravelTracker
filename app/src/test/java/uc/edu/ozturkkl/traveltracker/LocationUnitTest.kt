@@ -18,16 +18,16 @@ class LocationUnitTest {
 
     fun `Location DTO should maintain it's state`() {
         var location = Location("5433 Waterfall Hills", "Cincinnati", "Ohio", 45244)
-        assertTrue(location.address.equals("5433 Waterfall Hills") )
-        assertTrue(location.city.equals("Cincinnati"))
-        assertTrue(location.state.equals("Ohio"))
-        assertTrue(location.zip.equals(45244))
+        assertTrue(location.address == ("5433 Waterfall Hills") )
+        assertTrue(location.city == ("Cincinnati"))
+        assertTrue(location.state == ("Ohio"))
+        assertTrue(location.zip == (45244))
     }
 
     @Test
     fun `Should be able to find the correct address`() {
         mvm = MainViewModel()
         mvm.fetchLocations("5433 Waterfall Hills");
-        assertTrue(mvm.locations[0].zip.equals(45244))
+        assertTrue(mvm.locations[0].zip == (45244))
     }
 }
