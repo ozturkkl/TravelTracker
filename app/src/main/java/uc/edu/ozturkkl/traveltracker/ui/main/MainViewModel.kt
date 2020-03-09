@@ -5,7 +5,7 @@ import uc.edu.ozturkkl.traveltracker.dto.Location
 import uc.edu.ozturkkl.traveltracker.locationServiceStub.LocationStub
 
 class MainViewModel : ViewModel() {
-    private var _locations: MutableList<Location> = ArrayList()
+    private var _locations: MutableList<Location> = mutableListOf()
     var locationService: LocationStub = LocationStub()
     var locationName: String = String()
 
