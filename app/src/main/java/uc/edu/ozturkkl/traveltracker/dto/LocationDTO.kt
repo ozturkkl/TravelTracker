@@ -1,7 +1,14 @@
 package uc.edu.ozturkkl.traveltracker.dto
+import android.gesture.Prediction
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
 
-//this might have to change when we actually request from the API
-data class Location(var address : String, var city : String, var state : String, var zip : Int) {
-
+class PredictionResponse {
+    @SerializedName("predictions")
+    @Expose
+    var predictions: List<Prediction>? = null
+    @SerializedName("status")
+    @Expose
+    var status: String? = null
 
 }
