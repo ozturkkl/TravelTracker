@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.main_fragment.*
 import uc.edu.ozturkkl.traveltracker.R
+import uc.edu.ozturkkl.traveltracker.dto.PlacesDTO
 
 class MainFragment : Fragment() {
 
@@ -23,9 +25,18 @@ class MainFragment : Fragment() {
         return inflater.inflate(R.layout.main_fragment, container, false)
     }
 
+    private fun savePlaces() {
+        var places = PlacesDTO().apply {
+            location = lblLocation.text.toString()
+            description =txtDescription.text.toString()
+        }
+        viewModel.save(places)
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        savePlaces()
         // TODO: Use the ViewModel
     }
 
