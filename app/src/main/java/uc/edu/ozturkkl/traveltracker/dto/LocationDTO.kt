@@ -10,5 +10,4 @@ class PredictionResponse {
     @SerializedName("status")
     @Expose
     var status: String? = null
-
 }
