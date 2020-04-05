@@ -24,7 +24,9 @@ class LocationService {
                 call: Call<ArrayList<PredictionResponse>>,
                 response: Response<ArrayList<PredictionResponse>>
             ) {
-                _locations.value = response.body()
+                if (Response.isSuccessful()) {
+                    _locations.value = response.body()
+                }
             }
         })
 

@@ -3,4 +3,5 @@
     <string name="places_i_ve_been">Places I\'ve Been</string>
     <string name="location">Example Location</string>
     <string name="description">Description</string>
+    <string name="DescriptionText">descriptionText</string>
 </resources>
