@@ -13,11 +13,12 @@ class LocationUnitTest {
 
     lateinit var mvm: MainViewModel
 
-    //this test will fail because I haven't added the API key directly into the code for security reasons
-//    @Test
-//    fun canFindAddress() {
-//        mvm = MainViewModel()
-//        mvm.loadPredictions("2600 Clifton Avenue");
-//        assertTrue(mvm.locations.contains("2600 Clifton Avenue, Cincinnati, OH, USA"))
-//    }
+    /*this test will fail because I haven't added the API key directly into the code for security reasons
+*   @Test
+*   fun canFindAddress() {
+*       mvm = MainViewModel()
+*       mvm.loadPredictions("2600 Clifton Avenue");
+*       assertTrue(mvm.locations.contains("2600 Clifton Avenue, Cincinnati, OH, USA"))
+    }
+     */
 }
