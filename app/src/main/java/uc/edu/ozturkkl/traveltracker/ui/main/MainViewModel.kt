@@ -9,15 +9,15 @@ import uc.edu.ozturkkl.traveltracker.services.LocationService
 class MainViewModel : ViewModel() {
     private var _locations: MutableLiveData<ArrayList<PredictionResponse>> = MutableLiveData()
     var address: String = String()
-    var locationService = LocationService();
+    var locationService = LocationService()
     private lateinit var firestore : FirebaseFirestore
 
     init {
         loadPredictions(address)
     }
 
-    fun loadPredictions(address : String) {
-        _locations = locationService.loadPredictions(address);
+    private fun loadPredictions(address : String) {
+        _locations = locationService.loadPredictions(address)
     }
 
     internal var locations: MutableLiveData<ArrayList<PredictionResponse>>

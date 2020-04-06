@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import uc.edu.ozturkkl.traveltracker.R
+import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : Fragment() {
 
@@ -26,7 +28,14 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
+        floatingActionButton3.setOnClickListener{
+            addLocation()
+        }
     }
 
+    private fun addLocation() {
+            Toast.makeText(activity, "Replace this action with the Location Addition Event!", Toast.LENGTH_LONG).show()
+    }
 }
+
+
