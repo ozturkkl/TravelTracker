@@ -5,8 +5,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClientInstance {
 
-    private var retrofit: Retrofit? = null;
-    private const val BASE_URL = "https://maps.googleapis.com/maps/";
+    private var retrofit: Retrofit? = null
+    private const val BASE_URL = "https://maps.googleapis.com/maps/"
 
     val retrofitInstance : Retrofit?
         get() {
