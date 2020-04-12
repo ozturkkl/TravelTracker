@@ -2,10 +2,10 @@ package uc.edu.ozturkkl.traveltracker.services
 
 import androidx.lifecycle.MutableLiveData
 import uc.edu.ozturkkl.traveltracker.dto.PredictionResponse
-import uc.edu.ozturkkl.traveltracker.RetrofitClientInstance
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import uc.edu.ozturkkl.traveltracker.RetrofitClientInstance
 import uc.edu.ozturkkl.traveltracker.dao.PlaceAutoCompleteAPI
 
 class LocationService {

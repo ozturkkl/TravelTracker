@@ -12,3 +12,4 @@
 /captures
 .externalNativeBuild
 .cxx
+/app/src/main/java/uc/edu/ozturkkl/traveltracker/dao/PlaceAutoCompleteAPI.kt
