@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.main_fragment.*
+import com.google.android.libraries.places.widget.AutocompleteSupportFragment
 import uc.edu.ozturkkl.traveltracker.R
 import uc.edu.ozturkkl.traveltracker.dto.PlacesDTO
 
@@ -22,7 +22,7 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        return inflater.inflate(R.layout.activity_maps, container, false)
     }
 
     private fun savePlaces() {
@@ -37,8 +37,6 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        savePlaces()
-        // TODO: Use the ViewModel
     }
 
 }
