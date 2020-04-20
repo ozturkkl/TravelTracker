@@ -29,6 +29,7 @@ class MainFragment : Fragment() {
         var places = PlacesDTO().apply {
             location = lblLocation.text.toString()
             description =txtDescription.text.toString()
+            rating = ratingLocation.rating.toInt()
         }
         viewModel.save(places)
     }
@@ -41,3 +42,5 @@ class MainFragment : Fragment() {
     }
 
 }
+
+
