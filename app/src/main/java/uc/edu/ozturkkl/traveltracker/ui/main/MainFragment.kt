@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment
 import uc.edu.ozturkkl.traveltracker.R
+import uc.edu.ozturkkl.traveltracker.dto.PlacesDTO
 
 class MainFragment : Fragment() {
 
@@ -24,9 +25,20 @@ class MainFragment : Fragment() {
         return inflater.inflate(R.layout.activity_maps, container, false)
     }
 
+    private fun savePlaces() {
+        var places = PlacesDTO().apply {
+            location = lblLocation.text.toString()
+            description =txtDescription.text.toString()
+            rating = ratingLocation.rating.toInt()
+        }
+        viewModel.save(places)
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
     }
 
 }
+
+

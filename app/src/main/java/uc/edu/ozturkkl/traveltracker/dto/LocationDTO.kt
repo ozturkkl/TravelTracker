@@ -11,4 +11,5 @@ class PredictionResponse {
     @Expose
     var status: String? = null
 
+
 }
