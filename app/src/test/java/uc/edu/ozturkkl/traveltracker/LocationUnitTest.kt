@@ -1,7 +1,5 @@
 package uc.edu.ozturkkl.traveltracker
 
-import org.junit.Test
-import org.junit.Assert.*
 import uc.edu.ozturkkl.traveltracker.ui.main.MainViewModel
 
 /**

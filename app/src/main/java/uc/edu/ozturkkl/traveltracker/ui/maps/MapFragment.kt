@@ -1,4 +1,4 @@
-package uc.edu.ozturkkl.traveltracker.ui.main
+package uc.edu.ozturkkl.traveltracker.ui.maps
 
 import android.content.ContentValues.TAG
 import android.os.AsyncTask
@@ -18,17 +18,19 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
+
 import uc.edu.ozturkkl.traveltracker.R
+import uc.edu.ozturkkl.traveltracker.ui.main.MainViewModel
 import java.util.*
 
 
-class MainFragment : Fragment() {
+class MapFragment : Fragment() {
 
     private lateinit var mMap : GoogleMap
     private var mapReady = false
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = MapFragment()
     }
 
     private lateinit var viewModel: MainViewModel
@@ -37,7 +39,8 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        var rootView = inflater.inflate(R.layout.activity_maps, container, false)
+        var rootView = inflater.inflate(R.layout.maps_fragment, container, false)
+
         var mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync {
             googleMap -> mMap = googleMap
@@ -70,9 +73,7 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        activity.let {
-            viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        }
+        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         //observe viewModel
     }
 

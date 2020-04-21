@@ -5,14 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainFragment">
+    tools:context=".ui.maps.MapFragment">
 
     <TextView
         android:id="@+id/lblPlacesHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/places_i_ve_been"
+        android:text="@string/places_to_visit"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,21 +110,17 @@
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton3"
-        android:layout_width="59dp"
-        android:layout_height="56dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="32dp"
+        android:id="@+id/addPlaceBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="75dp"
         android:clickable="true"
-        android:focusable="true"
         android:src="@android:drawable/ic_input_add"
-        android:tint="@color/colorWhite"
+        android:tint="@color/colorPrimaryDark"
         app:backgroundTint="@color/colorPrimary"
-        app:backgroundTintMode="multiply"
-        app:fabSize="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:maxImageSize="40dp"
-        app:rippleColor="@color/colorWhite" />
+        app:maxImageSize="40dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
