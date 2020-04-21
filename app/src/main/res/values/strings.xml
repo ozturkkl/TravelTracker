@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">Travel Tracker</string>
-    <string name="places_i_ve_been">Places I\'ve Been</string>
+    <string name="places_i_ve_been">Been To</string>
     <string name="location">Example Location</string>
     <string name="description">Description</string>
     <string name="title_activity_maps">Map</string>
+    <string name="map">Map</string>
+    <string name="places_to_visit">To Visit</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_location">Add Location</string>
 </resources>
