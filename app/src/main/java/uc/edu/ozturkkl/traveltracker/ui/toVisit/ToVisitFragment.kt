@@ -1,5 +1,6 @@
 package uc.edu.ozturkkl.traveltracker.ui.toVisit
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction
 import kotlinx.android.synthetic.main.to_visit_fragment.*
 
 import uc.edu.ozturkkl.traveltracker.R
+import uc.edu.ozturkkl.traveltracker.ui.addplace.AddPlaceActivity
 import uc.edu.ozturkkl.traveltracker.ui.main.MainActivity
 
 /**
@@ -35,7 +37,8 @@ class ToVisitFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         addPlaceBtn.setOnClickListener(){
-            MainActivity().showAddPlaceScreen()
+            val intent = Intent(activity, AddPlaceActivity::class.java)
+            startActivity(intent)
         }
     }
 
