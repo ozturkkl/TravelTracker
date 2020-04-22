@@ -1,15 +1,4 @@
 package uc.edu.ozturkkl.traveltracker.dto
-import android.gesture.Prediction
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
 
-class PredictionResponse {
-    @SerializedName("predictions")
-    @Expose
-    var predictions: List<Prediction>? = null
-    @SerializedName("status")
-    @Expose
-    var status: String? = null
-
-
+data class LocationDTO(val name : String = "", val haveVisited : Boolean = false, val rating : Float = 0.0f, val description : String = "", val longitude : String = "", val latitude: String = "", var id : String = "") {
 }
