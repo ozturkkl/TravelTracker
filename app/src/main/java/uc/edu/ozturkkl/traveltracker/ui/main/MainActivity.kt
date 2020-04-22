@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
         supportFragmentManager.beginTransaction()
-            .replace(R.id.container, BeenToFragment.newInstance())
+            .replace(R.id.container, MapFragment.newInstance())
             .commitNow()
 
         mapBtn.setOnClickListener(){
