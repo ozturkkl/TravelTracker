@@ -22,4 +22,5 @@
     <string name="location_name_label">"Location Name: "</string>
     <string name="location_rating_label">"Location Rating: "</string>
     <string name="location_description_label">Location Description:</string>
+    <string name="location_visited_label">"Location Visited: "</string>
 </resources>

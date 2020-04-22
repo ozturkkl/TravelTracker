@@ -61,12 +61,23 @@
         android:id="@+id/locationNameLbl2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="40dp"
         android:text="@string/location_rating_label"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/locationNameTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/locationNameLbl4" />
+
+    <TextView
+        android:id="@+id/locationNameLbl4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/location_visited_label"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationNameLbl" />
 
     <RatingBar
         android:id="@+id/locationRating"
@@ -86,12 +97,12 @@
         android:id="@+id/locationNameLbl3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="40dp"
         android:text="@string/location_description_label"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/locationRating" />
+        app:layout_constraintTop_toBottomOf="@+id/locationNameLbl2" />
 
     <EditText
         android:id="@+id/locationDescTxt"
@@ -107,6 +118,7 @@
         android:gravity="start|top"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/locationNameLbl3" />
 
@@ -133,5 +145,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/locationNameLbl4"
+        app:layout_constraintStart_toEndOf="@+id/locationNameLbl4"
+        app:layout_constraintTop_toTopOf="@+id/locationNameLbl4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
