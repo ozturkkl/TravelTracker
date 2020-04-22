@@ -54,7 +54,9 @@ class AddPlaceActivity : AppCompatActivity() {
     private fun saveLocation() {
         description = locationDescTxt.text.toString()
         rating = locationRating.rating
-        // based on front end, haveVisited = true
+        if(hasVisitedSwitch.isChecked){
+            haveVisited = true
+        }
         var location = LocationDTO(name, haveVisited, rating, description, long, lat)
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
