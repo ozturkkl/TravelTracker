@@ -1,11 +1,12 @@
 package uc.edu.ozturkkl.traveltracker.ui.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.libraries.places.api.Places
 import kotlinx.android.synthetic.main.main_activity.*
 import uc.edu.ozturkkl.traveltracker.R
-import uc.edu.ozturkkl.traveltracker.ui.addplace.AddPlaceFragment
+import uc.edu.ozturkkl.traveltracker.ui.addplace.AddPlaceActivity
 import uc.edu.ozturkkl.traveltracker.ui.beenTo.BeenToFragment
 import uc.edu.ozturkkl.traveltracker.ui.maps.MapFragment
 import uc.edu.ozturkkl.traveltracker.ui.toVisit.ToVisitFragment
@@ -48,8 +49,5 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showAddPlaceScreen(){
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container, AddPlaceFragment.newInstance())
-            .commitNow()
     }
 }
