@@ -59,6 +59,7 @@ class MapFragment : Fragment() {
         autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.LAT_LNG, Place.Field.RATING));
         autocompleteFragment.setOnPlaceSelectedListener(object : PlaceSelectionListener {
             override fun onPlaceSelected(place: Place) {
+                //move camera to selected location
                 var mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
                 mapFragment.getMapAsync {
                         googleMap -> mMap = googleMap
@@ -67,6 +68,8 @@ class MapFragment : Fragment() {
                     val location = place.latLng!!
                     mMap.moveCamera(CameraUpdateFactory.newLatLng(location))
                 }
+
+                //pass Place data as Strings to intent
                 val intent = Intent(activity, AddPlaceActivity::class.java)
                 if(place.name  != null){
                     intent.putExtra("PLACE_NAME", place.name.toString())
@@ -100,16 +103,21 @@ class MapFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
 
+        //obeserve locations
         viewModel.locations.observe(this, androidx.lifecycle.Observer{
             locations ->
             locations.forEach{
                 val color = null
+
+                //add locations to map
                 var mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
                 mapFragment.getMapAsync {
                         googleMap -> mMap = googleMap
 
                     mMap = googleMap
                     val location = LatLng(it.latitude.toDouble(), it.longitude.toDouble())
+
+                    //distinguish color based on boolean haveVisited
                     if(it.haveVisited){
                         mMap.addMarker(
                             MarkerOptions()
@@ -141,9 +149,13 @@ class MapFragment : Fragment() {
 
     private fun requestLocationUpdates() {
         locationViewModel = ViewModelProviders.of(this).get(LocationViewModel::class.java)
+
+        //observe live data
         locationViewModel.getLocationLiveData().observe(this, androidx.lifecycle.Observer {
             val latitude = it.latitude
             val longitude = it.longitude
+
+            //add circle and move map to current location of user
             var mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
             mapFragment.getMapAsync {
                     googleMap -> mMap = googleMap

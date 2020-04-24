@@ -28,6 +28,7 @@ class AddPlaceActivity : AppCompatActivity() {
 
         setContentView(R.layout.add_place_activity)
 
+        //retrieve Place data and populate form
         if(intent.hasExtra("PLACE_NAME")){
             name = intent.getStringExtra("PLACE_NAME")!!
             locationNameTxt.setText(name)
@@ -52,13 +53,17 @@ class AddPlaceActivity : AppCompatActivity() {
     }
 
     private fun saveLocation() {
+        //initialize any variables that weren't passed into the intent
         description = locationDescTxt.text.toString()
         rating = locationRating.rating
         if(hasVisitedSwitch.isChecked){
             haveVisited = true
         }
+
+        //populate the DTO object
         var location = LocationDTO(name, haveVisited, rating, description, long, lat)
 
+        //save location
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         viewModel.new(location)
 

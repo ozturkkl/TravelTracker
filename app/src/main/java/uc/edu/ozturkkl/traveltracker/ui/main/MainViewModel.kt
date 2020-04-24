@@ -20,6 +20,7 @@ class MainViewModel : ViewModel() {
     }
 
     private fun listenToLocations() {
+        //watching the Locations collection and updating data
         firestore.collection("Locations").addSnapshotListener{
             snapshot, e ->
             if(e != null){
@@ -41,6 +42,7 @@ class MainViewModel : ViewModel() {
     }
 
     fun new(location: LocationDTO) {
+        //save lovation
         val document = firestore.collection("Locations").document()
         location.id = document.id
             document.set(location)
@@ -55,6 +57,7 @@ class MainViewModel : ViewModel() {
     }
 
     fun update(location: LocationDTO) {
+        //update a location based on its id
         val document = firestore.collection("Locations").document(location.id)
         location.id = document.id
         document.set(location)
