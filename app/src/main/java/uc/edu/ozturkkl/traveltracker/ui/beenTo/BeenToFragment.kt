@@ -1,7 +1,6 @@
 package uc.edu.ozturkkl.traveltracker.ui.beenTo
 
 import android.content.Context
-import android.media.Rating
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,20 +8,15 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.RatingBar
 import android.widget.TextView
-import androidx.cardview.widget.CardView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.been_to_fragment.*
-import kotlinx.android.synthetic.main.location_template.*
 import uc.edu.ozturkkl.traveltracker.R
 import uc.edu.ozturkkl.traveltracker.dto.LocationDTO
 import uc.edu.ozturkkl.traveltracker.ui.main.MainViewModel
 
 
 class BeenToFragment : Fragment() {
-
-    private lateinit var locations:ArrayList<LocationDTO>
 
     companion object {
         fun newInstance() = BeenToFragment()
@@ -40,18 +34,20 @@ class BeenToFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         if(context != null){
 
             viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
             viewModel.locations.observe(this, androidx.lifecycle.Observer{
                     locations ->
-                this.locations = locations
-                beenToList.adapter = CustomAdapter(beenToList.context ,locations)
-
+                var visitedLocations:ArrayList<LocationDTO> = ArrayList<LocationDTO>()
+                locations.forEach{
+                    if (it.haveVisited){
+                        visitedLocations.add(it)
+                    }
+                }
+                beenToList.adapter = CustomAdapter(beenToList.context ,visitedLocations)
             })
         }
-
     }
 
     private class CustomAdapter(context: Context?, locations: ArrayList<LocationDTO>): BaseAdapter() {
@@ -85,7 +81,6 @@ class BeenToFragment : Fragment() {
         override fun getCount(): Int {
             return locations.size
         }
-
     }
 }
 

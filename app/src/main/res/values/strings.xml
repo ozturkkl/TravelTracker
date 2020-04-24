@@ -23,4 +23,6 @@
     <string name="location_rating_label">"Location Rating: "</string>
     <string name="location_description_label">Location Description:</string>
     <string name="location_visited_label">"Location Visited: "</string>
+    <string name="been_to_header">Places I\'ve Been</string>
+    <string name="to_visit_header">Places To Visit</string>
 </resources>

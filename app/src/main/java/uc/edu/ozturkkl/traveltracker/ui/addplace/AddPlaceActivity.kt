@@ -62,10 +62,7 @@ class AddPlaceActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         viewModel.new(location)
 
-        setContentView(R.layout.main_activity)
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container, MapFragment.newInstance())
-            .commitNow()
+        finish()
     }
 
 
