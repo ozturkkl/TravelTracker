@@ -4,7 +4,7 @@ The Travel Tracker app provides an easy-to-use way of managing both prospective 
 ## Layout
 The layout of the software is super simple and has three main screens that the user can go to.
 
-![Travel Tracker Layout](/images/TravelTrackerLayout.png)
+![TravelTrackerLayout](https://user-images.githubusercontent.com/51798197/131588039-cb1e7f0d-c7b4-4d05-ba38-08e3b24fa7eb.png)
 
 ### Map
 With the included map, users can search for places that they would like to visit in the future.
